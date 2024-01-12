@@ -1,1 +1,1 @@
-# My own study on machine learning in Linux (deepin OS 20.9)
+# My own study on machine learning in Linux (Ubuntu22.04.3)

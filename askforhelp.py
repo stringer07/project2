@@ -173,7 +173,7 @@ def evaluate_model(model, env, initial_start_set=None, deterministic=True, num_r
                 if non_solved_set is not None and i in indices:
                     print('Could solve Eq.{} not solved by classical algorithm'.format(i))
                     non_solved_resolved += 1
-
+   
             # If we solved the equation at some point in the trajectory (relevant if end point is not 0)
             if min_poly <= simple_expr[i].count(sp.polylog):
                 solved_simple_len_min[str(simple_expr[i].count(sp.polylog))] += 1
