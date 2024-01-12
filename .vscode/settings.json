@@ -1,0 +1,7 @@
+{
+    "editor.cursorBlinking": "blink",
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "workbench.colorCustomizations": {},
+    "notebook.output.scrolling": true,
+    "notebook.output.textLineLimit": 20
+}
