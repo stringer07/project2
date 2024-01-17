@@ -30,10 +30,10 @@ if __name__ == '__main__':
     env = PolyLogLinExpr(max_step, reward_func, obs_space, act_space, rng)
 
     # Load the model
-    rl_model = TRPO.load("/home/stringer/Downloads/RL_agents_all/RL Agents/One_hot_cyclic_penalty.zip")
+    rl_model = TRPO.load("/home/stringer/code/One_hot_no_cyclic_penalty.zip")
 
     # Load the test set
-    start_set = "test_data.txt"
+    start_set = "/home/stringer/code/test_data.txt"
 
     # Evaluate the model and print the statistics
     evaluate_model(rl_model, env, initial_start_set=start_set, deterministic=True, num_runs=1, verbose=False,
