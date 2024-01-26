@@ -1,0 +1,268 @@
+INFO - 01/25/24 19:05:34 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/25/24 19:05:34 - 0:00:00 - We create a reward/penalty at each step
+INFO - 01/25/24 19:05:34 - 0:00:00 - Reward function has a penalty each step. Number of terms times -0.0. We also penalize lengthy expressions with -0.0 per word/arg
+INFO - 01/25/24 19:05:34 - 0:00:00 - Reward function also rewards each simplification with +1
+INFO - 01/25/24 19:05:34 - 0:00:00 - Final expression not simplified are penalized with 0
+INFO - 01/25/24 19:05:34 - 0:00:00 - Create an Observation space of size 512
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use a numeral decomposition for the integers
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use ['x'] variables
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use dict_keys(['add', 'mul', 'div', 'pow', 'polylog']) operators
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use ['INT+', 'INT-'] symbols
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] elements
+INFO - 01/25/24 19:05:34 - 0:00:00 - The full list of words is ['pad', 'x', 'add', 'mul', 'div', 'pow', 'polylog', 'INT+', 'INT-', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+INFO - 01/25/24 19:05:34 - 0:00:00 - The initial expression is 2*polylog(2, x)
+INFO - 01/25/24 19:05:34 - 0:00:00 - We use a reduced graph representation
+INFO - 01/25/24 19:05:34 - 0:00:00 - Creating an Action space with ['inversion', 'reflection', 'cyclic', 'duplication']
+INFO - 01/25/24 19:05:34 - 0:00:00 - Action is multi-dimensional : False
+INFO - 01/25/24 19:05:34 - 0:00:00 - Action space is Discrete(4)
+INFO - 01/25/24 19:05:34 - 0:00:00 - We have an environment that requires previous state information for the reward
+INFO - 01/25/24 19:05:34 - 0:00:00 - We have a dictionary observation space
+INFO - 01/25/24 19:05:34 - 0:00:00 - Loading initial eqs from /home/stringer/下载/data_and_model/train_data.txt
+INFO - 01/25/24 19:17:44 - 0:12:10 - Value network has [128, 128, 64] layers
+INFO - 01/25/24 19:17:44 - 0:12:10 - Policy network has [128, 128, 64] layers
+INFO - 01/25/24 19:17:44 - 0:12:10 - Policy and value networks share [256] layers
+INFO - 01/25/24 19:17:46 - 0:12:12 - MultiInputActorCriticPolicy(
+                                       (features_extractor): CombinedFeatureExtractor(
+                                         (word_encoder): GSageEncoder(
+                                           (embeddings): Identity()
+                                           (gcn_forward): GraphSAGE(20, 64, num_layers=2)
+                                           (gcn_fwd_state): GraphSAGE(20, 64, num_layers=2)
+                                         )
+                                       )
+                                       (mlp_extractor): MlpExtractor(
+                                         (shared_net): Sequential(
+                                           (0): Linear(in_features=131, out_features=256, bias=True)
+                                           (1): ReLU()
+                                         )
+                                         (policy_net): Sequential(
+                                           (0): Linear(in_features=256, out_features=128, bias=True)
+                                           (1): ReLU()
+                                           (2): Linear(in_features=128, out_features=128, bias=True)
+                                           (3): ReLU()
+                                           (4): Linear(in_features=128, out_features=64, bias=True)
+                                           (5): ReLU()
+                                         )
+                                         (value_net): Sequential(
+                                           (0): Linear(in_features=256, out_features=128, bias=True)
+                                           (1): ReLU()
+                                           (2): Linear(in_features=128, out_features=128, bias=True)
+                                           (3): ReLU()
+                                           (4): Linear(in_features=128, out_features=64, bias=True)
+                                           (5): ReLU()
+                                         )
+                                       )
+                                       (action_net): Linear(in_features=64, out_features=4, bias=True)
+                                       (value_net): Linear(in_features=64, out_features=1, bias=True)
+                                     )
+INFO - 01/25/24 19:55:06 - 0:49:32 - Num timesteps: 30000
+INFO - 01/25/24 19:55:06 - 0:49:32 - Best mean reward: -inf - Last mean reward per episode: 0.96
+INFO - 01/25/24 19:55:06 - 0:49:32 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 20:23:59 - 1:18:25 - Num timesteps: 60000
+INFO - 01/25/24 20:23:59 - 1:18:25 - Best mean reward: 0.96 - Last mean reward per episode: 1.06
+INFO - 01/25/24 20:23:59 - 1:18:25 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 20:41:50 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/25/24 20:41:50 - 0:00:00 - We create a reward/penalty at each step
+INFO - 01/25/24 20:41:50 - 0:00:00 - Reward function has a penalty each step. Number of terms times -0.0. We also penalize lengthy expressions with -0.0 per word/arg
+INFO - 01/25/24 20:41:50 - 0:00:00 - Reward function also rewards each simplification with +1
+INFO - 01/25/24 20:41:50 - 0:00:00 - Final expression not simplified are penalized with 0
+INFO - 01/25/24 20:41:50 - 0:00:00 - Create an Observation space of size 512
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use a numeral decomposition for the integers
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use ['x'] variables
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use dict_keys(['add', 'mul', 'div', 'pow', 'polylog']) operators
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use ['INT+', 'INT-'] symbols
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] elements
+INFO - 01/25/24 20:41:50 - 0:00:00 - The full list of words is ['pad', 'x', 'add', 'mul', 'div', 'pow', 'polylog', 'INT+', 'INT-', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+INFO - 01/25/24 20:41:50 - 0:00:00 - The initial expression is 2*polylog(2, x)
+INFO - 01/25/24 20:41:50 - 0:00:00 - We use a reduced graph representation
+INFO - 01/25/24 20:41:50 - 0:00:00 - Creating an Action space with ['inversion', 'reflection', 'cyclic', 'duplication']
+INFO - 01/25/24 20:41:50 - 0:00:00 - Action is multi-dimensional : False
+INFO - 01/25/24 20:41:50 - 0:00:00 - Action space is Discrete(4)
+INFO - 01/25/24 20:41:50 - 0:00:00 - We have an environment that requires previous state information for the reward
+INFO - 01/25/24 20:41:50 - 0:00:00 - We have a dictionary observation space
+INFO - 01/25/24 20:41:50 - 0:00:00 - Loading initial eqs from /home/stringer/下载/data_and_model/train_data.txt
+INFO - 01/25/24 20:43:09 - 0:00:00 - ============ Initialized logger ============
+INFO - 01/25/24 20:43:09 - 0:00:00 - We create a reward/penalty at each step
+INFO - 01/25/24 20:43:09 - 0:00:00 - Reward function has a penalty each step. Number of terms times -0.0. We also penalize lengthy expressions with -0.0 per word/arg
+INFO - 01/25/24 20:43:09 - 0:00:00 - Reward function also rewards each simplification with +1
+INFO - 01/25/24 20:43:09 - 0:00:00 - Final expression not simplified are penalized with 0
+INFO - 01/25/24 20:43:09 - 0:00:00 - Create an Observation space of size 512
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use a numeral decomposition for the integers
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use ['x'] variables
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use dict_keys(['add', 'mul', 'div', 'pow', 'polylog']) operators
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use ['INT+', 'INT-'] symbols
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'] elements
+INFO - 01/25/24 20:43:09 - 0:00:00 - The full list of words is ['pad', 'x', 'add', 'mul', 'div', 'pow', 'polylog', 'INT+', 'INT-', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+INFO - 01/25/24 20:43:09 - 0:00:00 - The initial expression is 2*polylog(2, x)
+INFO - 01/25/24 20:43:09 - 0:00:00 - We use a reduced graph representation
+INFO - 01/25/24 20:43:09 - 0:00:00 - Creating an Action space with ['inversion', 'reflection', 'cyclic', 'duplication']
+INFO - 01/25/24 20:43:09 - 0:00:00 - Action is multi-dimensional : False
+INFO - 01/25/24 20:43:09 - 0:00:00 - Action space is Discrete(4)
+INFO - 01/25/24 20:43:09 - 0:00:00 - We have an environment that requires previous state information for the reward
+INFO - 01/25/24 20:43:09 - 0:00:00 - We have a dictionary observation space
+INFO - 01/25/24 20:43:09 - 0:00:00 - Loading initial eqs from /home/stringer/下载/data_and_model/train_data.txt
+INFO - 01/25/24 20:55:20 - 0:12:11 - Value network has [128, 128, 64] layers
+INFO - 01/25/24 20:55:20 - 0:12:11 - Policy network has [128, 128, 64] layers
+INFO - 01/25/24 20:55:20 - 0:12:11 - Policy and value networks share [256] layers
+INFO - 01/25/24 20:55:22 - 0:12:12 - MultiInputActorCriticPolicy(
+                                       (features_extractor): CombinedFeatureExtractor(
+                                         (word_encoder): GSageEncoder(
+                                           (embeddings): Identity()
+                                           (gcn_forward): GraphSAGE(20, 64, num_layers=2)
+                                           (gcn_fwd_state): GraphSAGE(20, 64, num_layers=2)
+                                         )
+                                       )
+                                       (mlp_extractor): MlpExtractor(
+                                         (shared_net): Sequential(
+                                           (0): Linear(in_features=131, out_features=256, bias=True)
+                                           (1): ReLU()
+                                         )
+                                         (policy_net): Sequential(
+                                           (0): Linear(in_features=256, out_features=128, bias=True)
+                                           (1): ReLU()
+                                           (2): Linear(in_features=128, out_features=128, bias=True)
+                                           (3): ReLU()
+                                           (4): Linear(in_features=128, out_features=64, bias=True)
+                                           (5): ReLU()
+                                         )
+                                         (value_net): Sequential(
+                                           (0): Linear(in_features=256, out_features=128, bias=True)
+                                           (1): ReLU()
+                                           (2): Linear(in_features=128, out_features=128, bias=True)
+                                           (3): ReLU()
+                                           (4): Linear(in_features=128, out_features=64, bias=True)
+                                           (5): ReLU()
+                                         )
+                                       )
+                                       (action_net): Linear(in_features=64, out_features=4, bias=True)
+                                       (value_net): Linear(in_features=64, out_features=1, bias=True)
+                                     )
+INFO - 01/25/24 21:33:00 - 0:49:50 - Num timesteps: 30000
+INFO - 01/25/24 21:33:00 - 0:49:50 - Best mean reward: -inf - Last mean reward per episode: 0.93
+INFO - 01/25/24 21:33:00 - 0:49:50 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 22:03:43 - 1:20:34 - Num timesteps: 60000
+INFO - 01/25/24 22:03:43 - 1:20:34 - Best mean reward: 0.93 - Last mean reward per episode: 1.06
+INFO - 01/25/24 22:03:43 - 1:20:34 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 22:28:58 - 1:45:48 - Num timesteps: 90000
+INFO - 01/25/24 22:28:58 - 1:45:48 - Best mean reward: 1.06 - Last mean reward per episode: 1.18
+INFO - 01/25/24 22:28:58 - 1:45:48 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 22:46:57 - 2:03:48 - Num timesteps: 120000
+INFO - 01/25/24 22:46:57 - 2:03:48 - Best mean reward: 1.18 - Last mean reward per episode: 1.08
+INFO - 01/25/24 23:04:15 - 2:21:06 - Num timesteps: 150000
+INFO - 01/25/24 23:04:15 - 2:21:06 - Best mean reward: 1.18 - Last mean reward per episode: 1.01
+INFO - 01/25/24 23:22:51 - 2:39:41 - Num timesteps: 180000
+INFO - 01/25/24 23:22:51 - 2:39:41 - Best mean reward: 1.18 - Last mean reward per episode: 1.00
+INFO - 01/25/24 23:40:32 - 2:57:23 - Num timesteps: 210000
+INFO - 01/25/24 23:40:32 - 2:57:23 - Best mean reward: 1.18 - Last mean reward per episode: 1.19
+INFO - 01/25/24 23:40:32 - 2:57:23 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/25/24 23:57:09 - 3:14:00 - Num timesteps: 240000
+INFO - 01/25/24 23:57:09 - 3:14:00 - Best mean reward: 1.19 - Last mean reward per episode: 1.32
+INFO - 01/25/24 23:57:09 - 3:14:00 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 00:14:19 - 3:31:10 - Num timesteps: 270000
+INFO - 01/26/24 00:14:19 - 3:31:10 - Best mean reward: 1.32 - Last mean reward per episode: 1.22
+INFO - 01/26/24 00:31:43 - 3:48:34 - Num timesteps: 300000
+INFO - 01/26/24 00:31:43 - 3:48:34 - Best mean reward: 1.32 - Last mean reward per episode: 1.16
+INFO - 01/26/24 00:50:58 - 4:07:49 - Num timesteps: 330000
+INFO - 01/26/24 00:50:58 - 4:07:49 - Best mean reward: 1.32 - Last mean reward per episode: 1.33
+INFO - 01/26/24 00:50:58 - 4:07:49 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 01:09:27 - 4:26:18 - Num timesteps: 360000
+INFO - 01/26/24 01:09:27 - 4:26:18 - Best mean reward: 1.33 - Last mean reward per episode: 1.48
+INFO - 01/26/24 01:09:27 - 4:26:18 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 01:29:11 - 4:46:02 - Num timesteps: 390000
+INFO - 01/26/24 01:29:11 - 4:46:02 - Best mean reward: 1.48 - Last mean reward per episode: 1.02
+INFO - 01/26/24 01:48:00 - 5:04:50 - Num timesteps: 420000
+INFO - 01/26/24 01:48:00 - 5:04:50 - Best mean reward: 1.48 - Last mean reward per episode: 1.13
+INFO - 01/26/24 02:05:39 - 5:22:30 - Num timesteps: 450000
+INFO - 01/26/24 02:05:39 - 5:22:30 - Best mean reward: 1.48 - Last mean reward per episode: 1.44
+INFO - 01/26/24 02:24:29 - 5:41:20 - Num timesteps: 480000
+INFO - 01/26/24 02:24:29 - 5:41:20 - Best mean reward: 1.48 - Last mean reward per episode: 1.65
+INFO - 01/26/24 02:24:29 - 5:41:20 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 02:44:03 - 6:00:53 - Num timesteps: 510000
+INFO - 01/26/24 02:44:03 - 6:00:53 - Best mean reward: 1.65 - Last mean reward per episode: 1.64
+INFO - 01/26/24 03:02:46 - 6:19:36 - Num timesteps: 540000
+INFO - 01/26/24 03:02:46 - 6:19:36 - Best mean reward: 1.65 - Last mean reward per episode: 1.50
+INFO - 01/26/24 03:22:09 - 6:39:00 - Num timesteps: 570000
+INFO - 01/26/24 03:22:09 - 6:39:00 - Best mean reward: 1.65 - Last mean reward per episode: 1.61
+INFO - 01/26/24 03:39:31 - 6:56:22 - Num timesteps: 600000
+INFO - 01/26/24 03:39:31 - 6:56:22 - Best mean reward: 1.65 - Last mean reward per episode: 1.37
+INFO - 01/26/24 03:57:38 - 7:14:28 - Num timesteps: 630000
+INFO - 01/26/24 03:57:38 - 7:14:28 - Best mean reward: 1.65 - Last mean reward per episode: 1.35
+INFO - 01/26/24 04:16:30 - 7:33:20 - Num timesteps: 660000
+INFO - 01/26/24 04:16:30 - 7:33:20 - Best mean reward: 1.65 - Last mean reward per episode: 1.66
+INFO - 01/26/24 04:16:30 - 7:33:20 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 04:35:17 - 7:52:08 - Num timesteps: 690000
+INFO - 01/26/24 04:35:17 - 7:52:08 - Best mean reward: 1.66 - Last mean reward per episode: 1.73
+INFO - 01/26/24 04:35:17 - 7:52:08 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 04:54:15 - 8:11:05 - Num timesteps: 720000
+INFO - 01/26/24 04:54:15 - 8:11:05 - Best mean reward: 1.73 - Last mean reward per episode: 1.58
+INFO - 01/26/24 05:12:21 - 8:29:12 - Num timesteps: 750000
+INFO - 01/26/24 05:12:21 - 8:29:12 - Best mean reward: 1.73 - Last mean reward per episode: 1.83
+INFO - 01/26/24 05:12:21 - 8:29:12 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 05:31:03 - 8:47:53 - Num timesteps: 780000
+INFO - 01/26/24 05:31:03 - 8:47:53 - Best mean reward: 1.83 - Last mean reward per episode: 1.50
+INFO - 01/26/24 05:50:09 - 9:07:00 - Num timesteps: 810000
+INFO - 01/26/24 05:50:09 - 9:07:00 - Best mean reward: 1.83 - Last mean reward per episode: 1.39
+INFO - 01/26/24 06:09:11 - 9:26:01 - Num timesteps: 840000
+INFO - 01/26/24 06:09:11 - 9:26:01 - Best mean reward: 1.83 - Last mean reward per episode: 1.86
+INFO - 01/26/24 06:09:11 - 9:26:01 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 06:27:11 - 9:44:01 - Num timesteps: 870000
+INFO - 01/26/24 06:27:11 - 9:44:01 - Best mean reward: 1.86 - Last mean reward per episode: 1.71
+INFO - 01/26/24 06:46:01 - 10:02:52 - Num timesteps: 900000
+INFO - 01/26/24 06:46:01 - 10:02:52 - Best mean reward: 1.86 - Last mean reward per episode: 1.94
+INFO - 01/26/24 06:46:01 - 10:02:52 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 07:05:43 - 10:22:34 - Num timesteps: 930000
+INFO - 01/26/24 07:05:43 - 10:22:34 - Best mean reward: 1.94 - Last mean reward per episode: 1.72
+INFO - 01/26/24 07:24:48 - 10:41:39 - Num timesteps: 960000
+INFO - 01/26/24 07:24:48 - 10:41:39 - Best mean reward: 1.94 - Last mean reward per episode: 1.65
+INFO - 01/26/24 07:44:19 - 11:01:10 - Num timesteps: 990000
+INFO - 01/26/24 07:44:19 - 11:01:10 - Best mean reward: 1.94 - Last mean reward per episode: 1.65
+INFO - 01/26/24 08:04:26 - 11:21:17 - Num timesteps: 1020000
+INFO - 01/26/24 08:04:26 - 11:21:17 - Best mean reward: 1.94 - Last mean reward per episode: 1.74
+INFO - 01/26/24 08:22:34 - 11:39:25 - Num timesteps: 1050000
+INFO - 01/26/24 08:22:34 - 11:39:25 - Best mean reward: 1.94 - Last mean reward per episode: 1.87
+INFO - 01/26/24 08:41:01 - 11:57:52 - Num timesteps: 1080000
+INFO - 01/26/24 08:41:01 - 11:57:52 - Best mean reward: 1.94 - Last mean reward per episode: 1.89
+INFO - 01/26/24 08:59:45 - 12:16:35 - Num timesteps: 1110000
+INFO - 01/26/24 08:59:45 - 12:16:35 - Best mean reward: 1.94 - Last mean reward per episode: 1.88
+INFO - 01/26/24 09:19:05 - 12:35:56 - Num timesteps: 1140000
+INFO - 01/26/24 09:19:05 - 12:35:56 - Best mean reward: 1.94 - Last mean reward per episode: 1.89
+INFO - 01/26/24 09:38:31 - 12:55:22 - Num timesteps: 1170000
+INFO - 01/26/24 09:38:31 - 12:55:22 - Best mean reward: 1.94 - Last mean reward per episode: 1.91
+INFO - 01/26/24 09:56:37 - 13:13:28 - Num timesteps: 1200000
+INFO - 01/26/24 09:56:37 - 13:13:28 - Best mean reward: 1.94 - Last mean reward per episode: 1.70
+INFO - 01/26/24 10:15:56 - 13:32:47 - Num timesteps: 1230000
+INFO - 01/26/24 10:15:56 - 13:32:47 - Best mean reward: 1.94 - Last mean reward per episode: 1.59
+INFO - 01/26/24 10:35:24 - 13:52:15 - Num timesteps: 1260000
+INFO - 01/26/24 10:35:24 - 13:52:15 - Best mean reward: 1.94 - Last mean reward per episode: 1.60
+INFO - 01/26/24 10:54:37 - 14:11:28 - Num timesteps: 1290000
+INFO - 01/26/24 10:54:37 - 14:11:28 - Best mean reward: 1.94 - Last mean reward per episode: 1.69
+INFO - 01/26/24 11:14:40 - 14:31:31 - Num timesteps: 1320000
+INFO - 01/26/24 11:14:40 - 14:31:31 - Best mean reward: 1.94 - Last mean reward per episode: 1.89
+INFO - 01/26/24 11:34:18 - 14:51:09 - Num timesteps: 1350000
+INFO - 01/26/24 11:34:18 - 14:51:09 - Best mean reward: 1.94 - Last mean reward per episode: 1.82
+INFO - 01/26/24 11:53:13 - 15:10:04 - Num timesteps: 1380000
+INFO - 01/26/24 11:53:13 - 15:10:04 - Best mean reward: 1.94 - Last mean reward per episode: 1.81
+INFO - 01/26/24 12:13:40 - 15:30:31 - Num timesteps: 1410000
+INFO - 01/26/24 12:13:40 - 15:30:31 - Best mean reward: 1.94 - Last mean reward per episode: 1.71
+INFO - 01/26/24 12:33:58 - 15:50:48 - Num timesteps: 1440000
+INFO - 01/26/24 12:33:58 - 15:50:48 - Best mean reward: 1.94 - Last mean reward per episode: 1.77
+INFO - 01/26/24 12:54:01 - 16:10:52 - Num timesteps: 1470000
+INFO - 01/26/24 12:54:01 - 16:10:52 - Best mean reward: 1.94 - Last mean reward per episode: 1.59
+INFO - 01/26/24 13:14:55 - 16:31:46 - Num timesteps: 1500000
+INFO - 01/26/24 13:14:55 - 16:31:46 - Best mean reward: 1.94 - Last mean reward per episode: 2.00
+INFO - 01/26/24 13:14:55 - 16:31:46 - Saving new best model to log_dirtrpo_exp_0/best_model.zip
+INFO - 01/26/24 13:36:08 - 16:52:59 - Num timesteps: 1530000
+INFO - 01/26/24 13:36:08 - 16:52:59 - Best mean reward: 2.00 - Last mean reward per episode: 1.83
+INFO - 01/26/24 13:56:40 - 17:13:30 - Num timesteps: 1560000
+INFO - 01/26/24 13:56:40 - 17:13:30 - Best mean reward: 2.00 - Last mean reward per episode: 1.79
+INFO - 01/26/24 14:18:06 - 17:34:57 - Num timesteps: 1590000
+INFO - 01/26/24 14:18:06 - 17:34:57 - Best mean reward: 2.00 - Last mean reward per episode: 1.73
+INFO - 01/26/24 14:39:00 - 17:55:50 - Num timesteps: 1620000
+INFO - 01/26/24 14:39:00 - 17:55:50 - Best mean reward: 2.00 - Last mean reward per episode: 1.65
+INFO - 01/26/24 14:58:18 - 18:15:09 - Num timesteps: 1650000
+INFO - 01/26/24 14:58:18 - 18:15:09 - Best mean reward: 2.00 - Last mean reward per episode: 1.78
+INFO - 01/26/24 15:19:26 - 18:36:17 - Num timesteps: 1680000
+INFO - 01/26/24 15:19:26 - 18:36:17 - Best mean reward: 2.00 - Last mean reward per episode: 1.66
+INFO - 01/26/24 15:39:40 - 18:56:31 - Num timesteps: 1710000
+INFO - 01/26/24 15:39:40 - 18:56:31 - Best mean reward: 2.00 - Last mean reward per episode: 1.72
+INFO - 01/26/24 16:00:46 - 19:17:36 - Num timesteps: 1740000
+INFO - 01/26/24 16:00:46 - 19:17:36 - Best mean reward: 2.00 - Last mean reward per episode: 1.66

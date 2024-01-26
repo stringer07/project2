@@ -280,13 +280,13 @@ def evaluate_model(model, env, initial_start_set=None, deterministic=True, num_r
                 if random_agent:
                     action = random.randint(0, len(env.action_rep.actions)-1)
                     action_distr = model.policy.get_distribution(
-                        model.policy.obs_to_tensor(obs)[0]).distribution.probs.detach().numpy()[0]
+                        model.policy.obs_to_tensor(obs)[0]).distribution.probs.detach().cpu().numpy()[0]
 
                 else:
                     # Get the action distribution and apply the best one
                     action, _states = model.predict(obs, deterministic=deterministic)
                     action_distr = model.policy.get_distribution(
-                        model.policy.obs_to_tensor(obs)[0]).distribution.probs.detach().numpy()[0]
+                        model.policy.obs_to_tensor(obs)[0]).distribution.probs.detach().cpu().numpy()[0]
 
                 steps_done += 1
                 steps_done_distrib[str(action)] += 1
