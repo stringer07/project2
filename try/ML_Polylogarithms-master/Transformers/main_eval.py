@@ -88,9 +88,9 @@ if __name__ == '__main__':
         'n_heads': 4,
         'dropout': 0,
         'attention_dropout': 0,
-        'sinusoidal_embeddings': False,
+        'sinusoidal_embeddings': False,  
         'share_inout_emb': True,
-        'reload_model': 'model_path',
+        'reload_model': '/home/stringer/下载/Transformer Models/weight2.pth',
 
         # Trainer param
         'export_data': False,
@@ -131,7 +131,7 @@ if __name__ == '__main__':
         'debug_slurm': False,
 
         # Wolfram Client parameters (path to the wolfram kernel and the PolyLogTools library)
-        'kernel_path': None,
+        'kernel_path': '/usr/local/Wolfram/Mathematica/14.0/Executables/WolframKernel',
         'lib_path': None,
     })
 
